@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "male",
+  "category": "formal_suit",
+  "model_file": "formal_suit.obj",
+  "mtl_file": "formal_suit.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

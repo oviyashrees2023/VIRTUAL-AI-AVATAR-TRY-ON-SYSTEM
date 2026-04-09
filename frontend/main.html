@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Virtual Avatar System</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #0a0a0f;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --accent: #7c3aed;
+  --accent2: #db2777;
+  --line: #e5e7eb;
+  --card-bg: #f7f7fa;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 7%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+.nav-logo span { color: var(--accent); }
+.nav-cta {
+  padding: 9px 22px;
+  border-radius: 100px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.8; }
+
+/* ── HERO ── */
+.main-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 140px 7% 90px;
+  min-height: 100vh;
+  gap: 60px;
+  animation: fadeUp 0.9s ease both;
+}
+
+.main-left { max-width: 580px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+.main-title {
+  font-family: "Syne", sans-serif;
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 22px;
+  color: var(--ink);
+}
+.main-title span {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-desc {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 38px;
+  max-width: 440px;
+}
+
+.main-buttons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 15px 34px;
+  border-radius: 100px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  background: var(--ink);
+  color: white;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: transform 0.25s, opacity 0.25s;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover { transform: translateY(-3px); opacity: 0.88; }
+
+.btn-outline {
+  padding: 15px 34px;
+  border-radius: 100px;
+  border: 1.5px solid var(--line);
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--ink); background: var(--card-bg); }
+
+/* ── HERO VISUAL ── */
+.main-right { position: relative; flex-shrink: 0; }
+
+.avatar-box {
+  width: 360px;
+  height: 360px;
+  border-radius: 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+  overflow: hidden;
+}
+.avatar-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 30%, rgba(124,58,237,0.08), transparent 60%);
+}
+.avatar-box img { width: 200px; z-index: 2; position: relative; }
+
+.tag {
+  position: absolute;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.tag1 { top: 24px; left: -70px; animation: float2 5s infinite; }
+.tag2 { bottom: 40px; right: -80px; animation: float2 5s 1s infinite; }
+.tag3 { top: 200px; right: -60px; animation: float2 5s 2s infinite; }
+
+.tag-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ── LEARN SECTION ── */
+.learn-section {
+  padding: 100px 7%;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 32px 32px 0 0;
+}
+
+.learn-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.learn-title {
+  font-family: "Syne", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: #fff;
+  max-width: 380px;
+}
+.learn-title span {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.learn-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  max-width: 240px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.learn-card {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 28px;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.learn-card:first-child { border-radius: 16px 0 0 0; }
+.learn-card:nth-child(3) { border-radius: 0 16px 0 0; }
+.learn-card:nth-child(4) { border-radius: 0 0 0 16px; }
+.learn-card:last-child { border-radius: 0 0 16px 0; }
+
+.learn-card:hover { background: rgba(255,255,255,0.08); }
+
+.card-num {
+  font-family: "Syne", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.learn-card h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.learn-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-18px); }
+}
+@keyframes float2 {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.4; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .main-page { flex-direction: column; text-align: center; padding-top: 120px; }
+  .main-desc { margin: 0 auto 38px; }
+  .main-buttons { justify-content: center; flex-wrap: wrap; }
+  .main-title { font-size: 42px; }
+  .learn-grid { grid-template-columns: 1fr 1fr; }
+  .learn-top { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .eyebrow { margin: 0 auto 22px; }
+}
+@media (max-width: 600px) {
+  .learn-grid { grid-template-columns: 1fr; }
+  .avatar-box { width: 280px; height: 280px; }
+  .tag { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Avatar<span>AI</span></div>
+  <button class="nav-cta" onclick="startAvatar()">Get Started</button>
+</nav>
+
+<section class="main-page">
+  <div class="main-left">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      AI-Powered · Real-time 3D
+    </div>
+    <h1 class="main-title">
+      Create Your <span>AI Avatar</span><br>With Smart 3D Technology
+    </h1>
+    <p class="main-desc">
+      Generate a realistic 3D avatar from your photo using AI face analysis,
+      intelligent model selection, and interactive visualization.
+    </p>
+    <div class="main-buttons">
+      <button class="btn-primary" onclick="startAvatar()">Create Avatar</button>
+      <button class="btn-outline" onclick="scrollLearn()">Learn More</button>
+    </div>
+  </div>
+
+  <div class="main-right">
+    <div class="avatar-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+      <div class="avatar-glow"></div>
+    </div>
+    <div class="tag tag1"><span class="tag-dot"></span>AI Face Detection</div>
+    <div class="tag tag2"><span class="tag-dot"></span>3D Avatar Engine</div>
+    <div class="tag tag3"><span class="tag-dot"></span>Virtual Try-On</div>
+  </div>
+</section>
+
+<section class="learn-section" id="learnSection">
+  <div class="learn-top">
+    <h2 class="learn-title">How the <span>AI Avatar</span> System Works</h2>
+    <p class="learn-sub">Six intelligent steps from photo to fully styled 3D avatar.</p>
+  </div>
+
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="card-num">01</div>
+      <h3>Photo Capture</h3>
+      <p>The system captures a live photo using your camera or lets you upload an image for processing.</p>
+    </div>
+    <div class="learn-card">
+      <div class="card-num">02</div>
+      <h3>AI Face Analysis</h3>
+      <p>AI detects facial features and identifies face shape — oval, round, square, diamond, and more.</p>
+    </div>
+    <div class="learn-card">
+      <div class="card-num">03</div>
+      <h3>Gender &amp; Model Selection</h3>
+      <p>Based on gender and face shape, the system automatically selects the most suitable 3D avatar model.</p>
+    </div>
+    <div class="learn-card">
+      <div class="card-num">04</div>
+      <h3>3D Rendering</h3>
+      <p>Three.js renders the avatar in real time with lighting, rotation, zoom, and camera controls.</p>
+    </div>
+    <div class="learn-card">
+      <div class="card-num">05</div>
+      <h3>Virtual Try-On</h3>
+      <p>Users can apply dresses and hairstyles on the avatar for an interactive virtual fashion experience.</p>
+    </div>
+    <div class="learn-card">
+      <div class="card-num">06</div>
+      <h3>Future Enhancements</h3>
+      <p>Planned: realistic skin textures, AI outfit recommendations, AR try-on, and full animation support.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+function startAvatar() {
+  window.location.href = "index.html";
+}
+function scrollLearn() {
+  document.getElementById("learnSection").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+</body>
+</html>

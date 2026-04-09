@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "male",
+  "category": "t-shirt_pant",
+  "model_file": "t-shirt_pant.obj",
+  "mtl_file": "t-shirt_pant.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

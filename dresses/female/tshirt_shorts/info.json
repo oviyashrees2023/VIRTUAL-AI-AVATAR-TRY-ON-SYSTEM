@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "female",
+  "category": "tshirt_shorts",
+  "model_file": "tshirt_shorts.obj",
+  "mtl_file": "tshirt_shorts.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "avatar",
+  "gender": "female",
+  "face_shape": "heart",
+  "model_file": "female_heart.obj",
+  "mtl_file": "female_heart.mtl",
+  "texture_folder": "textures",
+  "scale": 1.0
+}

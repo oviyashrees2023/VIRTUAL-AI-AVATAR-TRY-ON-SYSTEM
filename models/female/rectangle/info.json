@@ -1,0 +1,9 @@
+{
+  "type": "avatar",
+  "gender": "female",
+  "face_shape": "rectangle",
+  "model_file": "female_rectangle.obj",
+  "mtl_file": "female_rectangle.mtl",
+  "texture_folder": "textures",
+  "scale": 1.0
+}

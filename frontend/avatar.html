@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3D Avatar System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #0a0a0f;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --accent: #7c3aed;
+  --accent2: #db2777;
+  --line: #e5e7eb;
+  --card-bg: #f7f7fa;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--card-bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TOP BANNER ── */
+.face-banner {
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.banner-logo {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.banner-logo span { color: var(--accent); }
+
+.banner-divider {
+  width: 1px; height: 16px;
+  background: var(--line);
+}
+
+#faceShapeBanner {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--muted);
+  animation: fadeIn 0.6s ease both;
+}
+
+.step-badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--card-bg);
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--line);
+}
+
+/* ── MAIN LAYOUT ── */
+.app-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 14px;
+  gap: 14px;
+}
+
+/* ── AVATAR VIEW ── */
+.avatar-view {
+  flex: 3;
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+#canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ── RIGHT PANEL ── */
+.dress-panel {
+  flex: 1;
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  padding: 18px 14px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  
+}
+
+.dress-panel::-webkit-scrollbar { width: 4px; }
+.dress-panel::-webkit-scrollbar-track { background: transparent; }
+.dress-panel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+/* Section labels */
+.panel-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  margin-top: 2px;
+  padding-left: 2px;
+}
+
+/* Divider between sections */
+.panel-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 16px 0;
+}
+
+/* ── ITEM LISTS ── */
+#dress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#hair-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Dress items */
+.dress-item {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dress-item::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  flex-shrink: 0;
+}
+
+.dress-item:hover {
+  border-color: var(--ink);
+  background: var(--surface);
+  transform: translateX(3px);
+}
+
+/* Hair items */
+.hair-item {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hair-item::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #22c55e);
+  flex-shrink: 0;
+}
+
+.hair-item:hover {
+  border-color: var(--ink);
+  background: var(--surface);
+  transform: translateX(3px);
+}
+
+/* Eyebrow section completely removed per request */
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .app-container { flex-direction: column; }
+  .dress-panel { height: 35vh; flex: none; }
+}
+
+#dress-list {
+  margin-bottom: 12px;
+}
+
+#hair-list {
+  margin-top: 6px;
+}
+
+.panel-section-label {
+  margin: 16px 0 8px 2px;
+}
+
+.dress-panel {
+  padding: 20px 16px;
+}
+
+#dress-list,
+#hair-list {
+  flex-shrink: 0;
+}
+
+.download-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 10px 25px rgba(34,197,94,0.3);
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: scale(1.03);
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="face-banner">
+  <div class="banner-left">
+    <div class="banner-logo">Avatar<span>AI</span></div>
+    <div class="banner-divider"></div>
+    
+  </div>
+  <div id="faceShapeBanner"></div>
+  <div class="step-badge">STEP 3 of 3</div>
+</div>
+
+<!-- MAIN -->
+<div class="app-container">
+
+  <!-- 3D Avatar -->
+  <div class="avatar-view">
+    <div id="canvas-container"></div>
+    
+  </div>
+
+  <!-- Right Panel -->
+  <div class="dress-panel">
+    <button id="downloadBtn" class="download-btn">Download Avatar</button>
+
+    <div class="panel-section-label">Dresses</div>
+    <div id="dress-list"></div>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <div class="panel-section-label">Hairstyles</div>
+    <div id="hair-list"></div>
+
+    <!-- Eyebrows section removed -->
+
+  </div>
+
+</div>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/MTLLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/OBJLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+<script src="js/api.js"></script>
+<script src="js/avatar.js"></script>
+
+</body>
+</html>

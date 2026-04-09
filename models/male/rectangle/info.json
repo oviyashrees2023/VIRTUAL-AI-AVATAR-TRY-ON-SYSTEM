@@ -1,0 +1,7 @@
+{
+  "gender": "male",
+  "face_shape": "rectangle",
+  "model_file": "male_rectangle.obj",
+  "mtl_file": "male_rectangle.mtl",
+  "texture_folder": "textures"
+}

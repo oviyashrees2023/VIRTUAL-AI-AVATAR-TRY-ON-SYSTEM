@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "female",
+  "category": "jean_tshirt",
+  "model_file": "jean_tshirt.obj",
+  "mtl_file": "jean_tshirt.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

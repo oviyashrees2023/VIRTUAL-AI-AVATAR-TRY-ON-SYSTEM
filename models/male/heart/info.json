@@ -1,0 +1,7 @@
+{
+  "gender": "male",
+  "face_shape": "heart",
+  "model_file": "male_heart.obj",
+  "mtl_file": "male_heart.mtl",
+  "texture_folder": "textures"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "avatar",
+  "gender": "female",
+  "face_shape": "oval",
+  "model_file": "female_oval.obj",
+  "mtl_file": "female_oval.mtl",
+  "texture_folder": "textures",
+  "scale": 1.0
+}

@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "female",
+  "category": "sport_suit",
+  "model_file": "sport_suit.obj",
+  "mtl_file": "sport_suit.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "male",
+  "category": "dress_2",
+  "model_file": "dress_2.obj",
+  "mtl_file": "dress_2.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

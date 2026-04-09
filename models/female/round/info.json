@@ -1,0 +1,9 @@
+{
+  "type": "avatar",
+  "gender": "female",
+  "face_shape": "round",
+  "model_file": "female_round.obj",
+  "mtl_file": "female_round.mtl",
+  "texture_folder": "textures",
+  "scale": 1.0
+}

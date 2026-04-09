@@ -1,0 +1,9 @@
+{
+  "type": "avatar",
+  "gender": "female",
+  "face_shape": "diamond",
+  "model_file": "female_diamond.obj",
+  "mtl_file": "female_diamond.mtl",
+  "texture_folder": "textures",
+  "scale": 1.0
+}

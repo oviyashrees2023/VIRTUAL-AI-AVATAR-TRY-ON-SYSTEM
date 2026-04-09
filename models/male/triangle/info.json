@@ -1,0 +1,7 @@
+{
+  "gender": "male",
+  "face_shape": "triangle",
+  "model_file": "male_triangle.obj",
+  "mtl_file": "male_triangle.mtl",
+  "texture_folder": "textures"
+}

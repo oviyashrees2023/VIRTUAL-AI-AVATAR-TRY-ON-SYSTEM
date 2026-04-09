@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "female",
+  "category": "blouse_skirt",
+  "model_file": "blouse_skirt.obj",
+  "mtl_file": "blouse_skirt.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

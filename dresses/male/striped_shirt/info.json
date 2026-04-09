@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "male",
+  "category": "striped_shirt",
+  "model_file": "striped_shirt.obj",
+  "mtl_file": "striped_shirt.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

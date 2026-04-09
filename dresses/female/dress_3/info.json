@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "female",
+  "category": "dress_3",
+  "model_file": "dress_3.obj",
+  "mtl_file": "dress_3.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

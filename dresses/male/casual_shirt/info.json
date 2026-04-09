@@ -1,0 +1,17 @@
+{
+  "type": "dress",
+  "gender": "male",
+  "category": "casual_shirt",
+  "model_file": "casual_shirt.obj",
+  "mtl_file": "casual_shirt.mtl",
+  "texture_folder": "textures",
+  "compatible_face_shapes": [
+    "oval",
+    "round",
+    "square",
+    "rectangle",
+    "triangle",
+    "diamond",
+    "heart"
+  ]
+}

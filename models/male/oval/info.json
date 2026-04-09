@@ -1,0 +1,7 @@
+{
+  "gender": "male",
+  "face_shape": "oval",
+  "model_file": "male_oval.obj",
+  "mtl_file": "male_oval.mtl",
+  "texture_folder": "textures"
+}

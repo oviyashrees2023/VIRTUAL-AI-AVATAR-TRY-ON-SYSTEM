@@ -1,0 +1,7 @@
+{
+  "gender": "male",
+  "face_shape": "diamond",
+  "model_file": "male_diamond.obj",
+  "mtl_file": "male_diamond.mtl",
+  "texture_folder": "textures"
+}
