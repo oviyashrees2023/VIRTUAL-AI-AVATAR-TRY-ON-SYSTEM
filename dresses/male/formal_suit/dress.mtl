@@ -1,22 +1,3 @@
-# MakeHuman exported MTL
-# www.makehumancommunity.org
-
-
-newmtl DefaultSkin
-Kd 0.5903 0.44 0.338
-Ks 0.3 0.3 0.3
-d 1
-
-newmtl Eye_brown
-Kd 1 1 1
-Ks 1 1 1
-d 0
-map_Kd textures/brown_eye.png
-map_D textures/brown_eye.png
-
-newmtl male_elegantsuit01
-Kd 1 1 1
-Ks 0.03529 0.03529 0.03529
-d 0
-map_Kd textures/male_elegantsuit01_diffuse.png
-map_D textures/male_elegantsuit01_diffuse.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:e14ee92d226cf7139b48af0fa27715a39fed0d7041ccaef2e8945260e8f7e31a
+size 396

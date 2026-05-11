@@ -1,14 +1,4 @@
-# Python
 venv/
 __pycache__/
 *.pyc
-
-# uploads
-backend/uploads/
-
-# node / cache
-node_modules/
-
-# system
-.DS_Store
-Thumbs.db
+uploads/

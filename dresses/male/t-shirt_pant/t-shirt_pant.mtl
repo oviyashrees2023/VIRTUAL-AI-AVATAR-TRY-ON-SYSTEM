@@ -1,32 +1,3 @@
-# Blender 5.0.1 MTL File: 't-shirt_pant.blend'
-# www.blender.org
-
-newmtl DefaultSkin
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.590300 0.440000 0.338000
-Ks 0.300000 0.300000 0.300000
-Ke 0.000000 0.000000 0.000000
-Ni 1.500000
-d 1.000000
-illum 2
-
-newmtl Eye_brown
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 1.000000 1.000000 1.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.500000
-d 1.000000
-illum 9
-map_Kd textures/brown_eye.png
-
-newmtl male_casualsuit06
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.027450 0.027450 0.027450
-Ke 0.000000 0.000000 0.000000
-Ni 1.500000
-d 1.000000
-illum 9
-map_Kd textures/male_casualsuit06_diffuse.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:53b8f83aa4b96d74804aa38edd1634417fc5ffe17f6e014aecdf72a32b1079c7
+size 634

@@ -1,13 +1,3 @@
-# Blender 5.0.1 MTL File: 'hair.blend'
-# www.blender.org
-
-
-newmtl short04
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.047060 0.047060 0.047060
-Ke 0.000000 0.000000 0.000000
-Ni 1.500000
-d 1.000000
-illum 9
-map_Kd textures/short04_diffuse.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:4c811f84c6084a3167788a145b3a6fcbc17c60f7607fedf8eef163ca0cbc5aa1
+size 243

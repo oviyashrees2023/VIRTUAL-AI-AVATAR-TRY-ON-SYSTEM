@@ -1,13 +1,3 @@
-
-newmtl uniform_1001
-Ka 1.000000 1.000000 1.000000
-Ks 0.322500 0.322500 0.322500
-Ke 0.000000 0.000000 0.000000
-Ni 1.500000
-illum 9
-d 1
-map_Kd textures/uniformDiffuse.png
-map_Ns textures/uniformRoughness.png
-map_refl textures/uniformMetal.png
-map_d textures/uniformTransparent.png
-map_Bump -bm 1.000000 textures/uniformNormal.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:1c954ac377c0d5d06ca2d4d6251577727ca697df335dd7d311a35968bcc0b1dd
+size 329

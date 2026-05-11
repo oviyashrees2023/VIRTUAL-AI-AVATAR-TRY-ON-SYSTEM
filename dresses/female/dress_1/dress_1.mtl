@@ -1,9 +1,3 @@
-newmtl bodycon_material
-
-Ka 1.0 1.0 1.0
-Kd 1.0 1.0 1.0
-Ks 0.2 0.2 0.2
-d 1.0
-illum 2
-
-map_Kd textures/uniformDiffuse.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a3996904c70dc8b75c2bd468e87a9a7d629b7b9d44827e31386c41dcd90d3fa
+size 119
