@@ -594,14 +594,30 @@ Large Blender source files were excluded to reduce repository size and improve d
 # Pages
 
 ## Main Page
+<img width="2559" height="1424" alt="image" src="https://github.com/user-attachments/assets/6b564f66-4dac-4b91-b2a5-2976b172a7d2" />
+
+<img width="2559" height="1418" alt="image" src="https://github.com/user-attachments/assets/25914e4e-5f3d-40e9-b48d-f63e3f0a910c" />
+
 
 ## Gender Selection
 
+<img width="2558" height="1429" alt="Screenshot 2026-05-11 151604" src="https://github.com/user-attachments/assets/ace8edc9-bfc1-47a7-a780-bfca46c6b04c" />
+
+
 ## Face Detection
+
+<img width="2559" height="1416" alt="Screenshot 2026-05-11 151653" src="https://github.com/user-attachments/assets/f5083a8d-d51e-463d-8d67-520d6649fd10" />
+
 
 ## Avatar Generation
 
+<img width="2559" height="1417" alt="Screenshot 2026-05-11 151746" src="https://github.com/user-attachments/assets/68b7ffa4-f116-4562-bde1-c84a1321c3ce" />
+
+
 ## Virtual Try-On
+
+<img width="2559" height="1412" alt="Screenshot 2026-05-11 151842" src="https://github.com/user-attachments/assets/c42473a7-e8d1-4016-9636-0429d3bbc3c1" />
+
 
 ---
 
