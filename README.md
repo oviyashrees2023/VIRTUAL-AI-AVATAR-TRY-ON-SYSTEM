@@ -56,7 +56,6 @@ Users can:
 
 * Wear dresses
 * Apply hairstyles
-* Apply eyebrows
 * Rotate avatar manually
 * Zoom and inspect avatar
 
@@ -152,7 +151,6 @@ VIRTUAL_AVATAR_SYSTEM/
 │   ├── main.html
 │   ├── capture.html
 │   ├── avatar.html
-│   ├── css/
 │   └── js/
 │       ├── api.js
 │       └── avatar.js
@@ -169,9 +167,6 @@ VIRTUAL_AVATAR_SYSTEM/
 │   ├── male/
 │   └── female/
 │
-├── eyebrows/
-│   ├── male/
-│   └── female/
 │
 ├── README.md
 ├── requirements.txt
@@ -305,7 +300,6 @@ Used for:
 * OBJ export
 * Dress fitting
 * Hair alignment
-* Eyebrow alignment
 * Texture fixing
 * Shrinkwrap modifier
 * Scaling and transformations
@@ -397,16 +391,6 @@ POST /get-hairstyles
 ```
 
 Returns hairstyles.
-
----
-
-## Get Eyebrows
-
-```http
-POST /get-eyebrows
-```
-
-Returns eyebrow assets.
 
 ---
 
@@ -634,7 +618,7 @@ Large Blender source files were excluded to reduce repository size and improve d
 
 The AI Virtual Avatar Try-On System successfully integrates Machine Learning, Computer Vision, and 3D rendering technologies to create an intelligent and interactive virtual fashion platform.
 
-The system demonstrates effective face shape prediction using Random Forest Classification and enables users to visualize personalized 3D avatars with hairstyles, eyebrows, and dresses in real time.
+The system demonstrates effective face shape prediction using Random Forest Classification and enables users to visualize personalized 3D avatars with hairstyles, and dresses in real time.
 
 The project provides a scalable foundation for future AI-powered virtual fashion applications, AR-based try-on systems, and intelligent avatar generation platforms.
 
